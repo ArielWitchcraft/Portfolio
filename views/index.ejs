@@ -1,0 +1,352 @@
+<%- include("./partials/header") %>
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<!-- Google自動翻訳の停止 -->
+		<meta name="google" content="notranslate">
+		<!-- Apple のMobile Safari でウェブ開発者がビューポートのサイズと拡大率を制御できるよう、モバイルに最適化した「viewport meta タグ」 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+        <title>「Webサイトを作って欲しい・LPを作成して欲しい・Webサイトを英語版に翻訳して欲しい」あなたのお悩みを解決サポートします</title>
+		 <!-- Google Font -->
+    	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap">
+		<!-- css -->
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+		<!-- js -->
+		<!-- ブラウザ機能検出のModernizr -->
+        <script nonce="<%= nonce %>" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
+		<!-- ローディング中にローディング画面を表示させる -->
+		<script nonce="<%= nonce %>" type="text/javascript">
+			window.onload = function() {
+			  const spinner = document.getElementById('loading');
+			  spinner.classList.add('loaded');
+			}
+		</script>
+    </head>
+<body>
+	<!-- ローディング画面 -->
+	<div id="loading">
+	  <div class="spinner"></div>
+	</div>
+	
+	<div id="wrapper">
+		<section class="container-fluid">
+		 <div class="top">
+			 <h2 class="d-flex align-items-center justify-content-center">
+				I am a Translator × Web Engineer
+			 </h2>
+		 </div>
+		</section>
+		
+			<ul class="slideshow">
+			  <li></li>
+			  <li></li>
+			  <li></li>
+			  <li></li>
+			  <li></li>
+			</ul>
+
+		<section class="container px-0">
+			<div class="container-fluid">
+				<h1 class="text-justify">
+					<%= __("「Webサイトを作って欲しい・LPを作成して欲しい・Webサイトを英語版に翻訳して欲しい」") %><br><%= __("フリーランスだからこそ柔軟にあなたのお悩みを解決サポートします") %>
+				</h1>
+			</div>
+			<div class="row align-items-center content">
+				<div class="col-md-6 order-2 order-md-1 web-img">
+					<img src="../images/AnyConv.com__Webengineer-min.jpeg" alt="" class="img-fluid">
+				</div>
+				<div class="col-md-6 text-center order-1 order-md-2">
+					<div class="row justify-content-center">
+						<div class="col-10 col-lg-8 mb-5 mb-md-0 myjob">
+							<h2>
+								<%= __("Webエンジニア") %>
+							</h2>
+							<i class="fas fa-laptop-code fa-2x" style="color: #c4a747"></i>
+							<p class="lead text-justify" style="margin-top: 20px;">
+								<%= __("これまでの翻訳通訳のキャリアを活かし、英語と日本語の言語切り換えが可能なサイト作成を得意としています。") %><br><%= __("もちろん、日本語版のみ・英語版のみの対応も可能です。レスポンシブ対応で丁寧に作成します。その他JavaScriptやJavaScriptフレームワーク・ライブラリを使用したWebアプリケーションのご依頼も承ります。") %><br><%= __("どうぞお気軽にご相談ください") %>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center content">
+				<div class="col-md-6 text-center">
+					<div class="row justify-content-center">
+						<div class="col-10 col-lg-8 mb-5 mb-md-0 myjob">
+							<h2>
+								<%= __("翻訳") %>
+							</h2>
+							<i class="fas fa-language fa-2x" style="color: #c4a747"></i>
+							<p class="lead text-justify" style="margin-top: 20px;">
+								<%= __("Webサイトを日本語版と英語版の言語切り換えをしたいけれどエンジニアと翻訳家をそれぞれ探すのは大変...という方へ。もちろんWebサイト以外の翻訳のお仕事も幅広く対応しております。メインは英日翻訳ですが、中国語（北京語）から日本語への翻訳も対応可能です。") %><br><%= __("日本人に馴染みやすい自然な意訳を心がけて丁寧に翻訳します。") %>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 trans-img">
+					<img src="../images/AnyConv.com__Translator-min.jpeg" alt="" class="img-fluid">
+				</div>
+			</div>
+		</section>
+		
+		<section id="section1" class="container-fluid px-0">
+			<div class="d-flex justify-content-center mb-5">
+				<h2 class="round rounded-circle d-flex align-items-center justify-content-center">ABOUT</h2>
+			</div>
+				<hr class="pause_1">
+				<div class="row align-items-center content2">
+					<div class="col-md-6 order-1 order-md-2">
+						<ul class="about">
+							<li>Ayaka Nakamura</li>
+							<li><%= __("ニックネームはAriel(アリエル)です。フィリピンで留学していた時に付けてもらいました。") %></li>
+							<li><%= __("東京都在住") %></li>
+							<li><%= __("当サイトをご覧いただきありがとうございます。このサイトは魔法をテーマに作成しました。") %><br><%= __("重厚感を感じさせる黒をベースに、暖かみのある黄金色と好きな色である紫色を使って暗くなり過ぎないように調整しました。") %></li>
+							<li><%= __("日本語・英語・中国語のトリリンガルでフリーランス翻訳をしています。メインは英日翻訳です。") %></li>
+							<li><%= __("2020年からプログラミング技術を習得。Webを通じて翻訳とプログラミングであなたの叶えたいビジネスをサポートします。") %></li>
+						</ul>
+					</div>
+					<div class="col-md-6 text-center order-2 order-md-1 profile-img">
+						<img src="../images/aboutme-min.jpeg" alt="プロフィール写真" class="img-fluid">
+					</div>
+				</div>
+			<div class="d-flex justify-content-center my-5">
+				<h2 class="round rounded-circle d-flex align-items-center justify-content-center">SKILLS</h2>
+			</div>
+				<hr class="pause_1">
+				<div class="container-fluid content2">
+					<div class="d-flex justify-content-center">
+						<h4>
+							<%= __("ランダムな色当てゲーム") %>
+						</h4>
+					</div>
+					<div class="d-flex justify-content-center">
+						<div class="scale-box">
+							<a href="../files/colorGame.html" target="_blank" rel="noopener noreferrer"><img src="../images/RGB Color Game-min.jpg" alt="" class="scale-image img-fluid"></a>
+						</div>
+					</div>
+					<div class="d-flex justify-content-center">
+						<p class="lead" style="margin-top: 20px;">
+							<%= __("HTML・CSS・JavaScriptで作ったゲームです。") %><br><%= __("色を数字で表現するRGBがランダムで出てきます。色を選んで当ててみてください！") %>	
+						</p>
+					</div>
+								<div class="row align-items-center my-5">
+									<div class="skill rounded col-md-3 text-center my-5">
+										<p class="lead" style="margin-bottom: 0px; color: #c4a747;">
+											HTML / CSS / Bootstrap<br>
+											<i class="fab fa-html5 fa-3x icon"></i>
+											<i class="fab fa-css3-alt fa-3x icon"></i>
+											<i class="fab fa-bootstrap fa-3x icon"></i>
+										</p>
+									</div>
+									<div class="col-md-9 text-center mb-5 mb-md-0">
+										<p class="lead text-justify" style="margin-left: 30px;">
+											<%= __("Webサイト（ホームページ）を作るためのマークアップ言語です。") %><br><%= __("文字フォントのデザインや色、コンテンツの配置など、ご希望のデザインに合わせて柔軟に作成可能です。") %>
+										</p>
+									</div>
+								</div>
+								<div class="row align-items-center my-5">
+									<div class="skill rounded col-md-3 text-center mb-5">
+										<p class="lead" style="margin-bottom: 0px; color: #c4a747;">
+											JavaScript / jQuery<br>
+											<i class="fab fa-js-square fa-3x icon"></i>
+										</p>
+									</div>
+									<div class="col-md-9 text-center mb-5 mb-md-0">
+										<p class="lead text-justify" style="margin-left: 30px;">
+											<%= __("アニメーションの動きを付け加えたい時にJavaScriptやjQueryを使用します。") %><br><%= __("フロントエンドとバックエンドどちらでも対応可能なプログラミング言語です。") %>
+										</p>
+									</div>
+								</div>
+								<div class="row align-items-center my-5">
+									<div class="skill rounded col-md-3 text-center">
+										<p class="lead" style="margin-bottom: 0px; color: #c4a747;">
+											Node.js<br>
+											<i class="fab fa-node fa-3x icon"></i>
+										</p>
+									</div>
+									<div class="col-md-9 text-center">
+										<p class="lead text-justify" style="margin-left: 30px; margin-top: 50px;">
+											<%= __("サーバーサイドのJavaScriptです。MicrosoftやeBayも推薦しており、処理速度が早いのが特徴です。チャットアプリケーションなどを作る際に役立ちます。") %>
+										</p>
+									</div>
+								</div>
+				</div>
+		</section>
+
+		<section id="section3" class="container-fluid px-0">
+				<div class="container-fluid text-center content3">
+					<h2 class="pb-4">
+						<%= __("サイト・ホームページ制作") %>
+					</h2>
+					<hr class="pause_2">
+						<div class="accordion" id="accordionExample">
+							<div class="row justify-content-center">
+								<!-- 1st content displays closed accordion for small breakpoint. -->
+								<div class="col-12 d-lg-none mb-4">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-top" src="../images/AnyConv.com__web1-min.jpeg" alt style="height: 300px;">		
+												<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													<%= __("コーディング/レスポンシブ") %>
+												</h3>
+										</div>
+										<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+										  <div class="card-body text-justify">
+											<%= __("「1ページで完了するサイトを制作したい」「新たな下層ページを追加で作りたい」「スマホ画面にもサイズ対応できるようにレスポンシブ対応させたい」という方へ。") %>
+											<ul style="margin-top: 40px">
+												<li><%= __("HTML＆CSSコーディング") %></li>
+												<li><%= __("下層ページコーディング") %></li>
+												<li><%= __("レスポンシブ対応") %></li>
+												<li><%= __("LP制作") %></li>
+												<li><%= __("ホームページ修正") %></li>
+											</ul>
+										  </div>
+										</div>
+									</div>
+								</div>
+								<!-- 1st content displays opened accordion from large breakpoint. -->
+								<div class="col-md-4 mb-4 d-none d-lg-block d-xl-block">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-top" src="../images/AnyConv.com__web1-min.jpeg" alt style="height: 300px;">		
+											<h3>
+												<%= __("コーディング/レスポンシブ") %>
+											</h3>
+										</div>
+										<div class="card-body body-1 text-justify">
+											<%= __("「1ページで完了するサイトを制作したい」「新たな下層ページを追加で作りたい」「スマホ画面にもサイズ対応できるようにレスポンシブ対応させたい」という方へ。") %>
+											<ul style="margin-top: 40px">
+												<li><%= __("HTML＆CSSコーディング") %></li>
+												<li><%= __("下層ページコーディング") %></li>
+												<li><%= __("レスポンシブ対応") %></li>
+												<li><%= __("LP制作") %></li>
+												<li><%= __("ホームページ修正") %></li>
+											</ul>
+										  </div>
+									</div>
+								</div>
+
+								<!-- 2nd content displays closed accordion for small breakpoint. -->
+								<div class="col-12 d-lg-none mb-4">
+									<div class="card">
+										<div class="card-header" id="headingTwo">
+											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt style="height: 300px;">
+												<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+													<%= __("アニメーション機能/サーバー側と連携するプログラム") %>
+												</h3>
+										</div>
+										<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+											<div class="card-body text-justify">
+												<%= __("「JavaScriptやjQueryを導入してアニメーションを付けた動きのあるサイトを持ちたい」「お問い合わせフォームを付けて自社のメールへ受信できるようにしたい」という方へ。") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("動きのあるページ作り") %></li>
+												<li><%= __("お問い合わせフォームをプログラム") %></li>
+												<li><%= __("ログイン/ログアウト機能をプログラム") %></li>
+											 </ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 2nd content displays opened accordion from large breakpoint. -->
+								<div class="col-md-4 mb-4 d-none d-lg-block d-xl-block">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt style="height: 300px;">		
+											<h3>
+												<%= __("アニメーション機能/サーバー側と連携するプログラム") %>
+											</h3>
+										</div>
+										<div class="card-body body-2 text-justify">
+											<%= __("「JavaScriptやjQueryを導入してアニメーションを付けた動きのあるサイトを持ちたい」「お問い合わせフォームを付けて自社のメールへ受信できるようにしたい」という方へ。") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("動きのあるページ作り") %></li>
+												<li><%= __("お問い合わせフォームをプログラム") %></li>
+												<li><%= __("ログイン/ログアウト機能をプログラム") %></li>
+											 </ul>
+										  </div>
+									</div>
+								</div>
+
+								<!-- 3rd content displays closed accordion for small breakpoint. -->
+								<div class="col-12 d-lg-none mb-4">
+									<div class="card">
+										<div class="card-header" id="headingTwo">
+											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt style="height: 300px;">
+											<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<%= __("その他Webアプリケーション開発など") %>
+											</h3>
+										</div>
+										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+											<div class="card-body text-justify">
+												<%= __("JavaScript・JavaScriptのライブラリやフレームワークを使用したアプリケーションの開発でプログラマーをお探しの方へ") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("仕様書に沿ってプログラミングを行うお仕事をお受け致します") %></li>
+											 </ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 3rd content displays opened accordion from large breakpoint. -->
+								<div class="col-md-4 mb-4 d-none d-lg-block d-xl-block">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt style="height: 300px;">		
+											<h3>
+												<%= __("その他Webアプリケーション開発など") %>
+											</h3>
+										</div>
+										<div class="card-body body-3 text-justify">
+											<%= __("JavaScript・JavaScriptのライブラリやフレームワークを使用したアプリケーションの開発でプログラマーをお探しの方へ") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("仕様書に沿ってプログラミングを行うお仕事をお受け致します") %></li>
+											 </ul>
+										 </div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<p class="lead2 py-5">
+							<%= __("ご要望に合わせて無限なカスタマイズが可能です。お気軽にご相談ください。") %>
+						</p>
+						<ul style="color: #1a1a1a; font-weight: 300; line-height: 1.8; position: relative; z-index: 1;" class="pb-5">
+							<li class="text-left"><%= __("ご予算に合わせて最適なプランを立てた上で制作させて頂きます。") %></li>
+							<li class="text-left"><%= __("双方のトラブル防止のため、ご契約完了後に作業開始させて頂きます。お見積りまでは無料で対応可能です。お気軽にお問い合わせください。") %></li>
+							<li class="text-left"><%= __("上記以外の事でも、実現したい事なんでもご相談ください。") %></li>
+							<li class="text-left"><%= __("ご不明な点があればいつでもご質問頂けます。お客様第一で、最大でも3日以内の素早い返信で対応させて頂きます。") %></li>
+						</ul>
+					<hr class="pause_3">
+					<h2 class="pt-5 pb-4">
+						<%= __("翻訳") %>
+					</h2>
+					<hr class="pause_2">
+						<p class="lead2 text-left text-justify">
+							<span style="font-weight: bold;"><%= __("英日翻訳") %></span>
+							<%= __("：文字単価１文字当たり5～12円でお受けいたします。") %><br><%= __("専門性の有無によって料金が変わります。日本人に伝わりやすく馴染みやすい文章へと翻訳を心がけております。お気軽にご相談ください。") %>	
+						</p>
+						<p class="lead2 text-left text-justify">
+							<span style="font-weight: bold;"><%= __("中日翻訳") %></span>
+							<%= __("：文字単価１文字当たり3～10円でお受けいたします。ビジネスレベルまでのため相場よりお安く対応させて頂きます。") %><br><%= __("商品説明翻訳を得意としております。") %>	
+						</p>
+						<p class="lead2 text-left text-justify mb-5">
+							<span style="font-weight: bold;"><%= __("サイト翻訳") %></span>
+							<%= __("サイト翻訳も文字数に合わせた金額でお受けいたします。言語は基本的に英日翻訳になります。") %><br><%= __("サイト内で直接翻訳してすぐ反映させたい、サイト作成も同時にして欲しいといったご要望であれば別途サイト編集・制作費用が発生します。") %>
+						</p>
+						<hr class="pause_3">
+							<div class="container text-center my-5">
+								<a href="/contact">
+									<button type="button" class="btn btn-lg btn-light my-5" style="font-family: 'Nunito', 'Noto Serif JP', serif; position: relative; z-index: 1;"><%= __("お問い合わせフォーム") %></button>
+								</a>
+								<p class="lead2 text-justify">
+									<%= __("お仕事のご依頼・お問い合わせはこちらから。") %><br><%= __("どんなご要望も受付中です。お気軽にこちらのフォームからお問合せください。３営業日以内に順次返信させて頂いております。") %>
+								</p>
+							</div>
+				</div>
+		</section>
+<%- include("./partials/footer") %>

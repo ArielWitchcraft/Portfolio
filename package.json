@@ -1,0 +1,23 @@
+{
+  "name": "portfolio_site",
+  "version": "1.0.0",
+  "description": "My Portfolio Site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start": "node app.js"
+  },
+  "author": "Ayaka Nakamura",
+  "license": "ISC",
+  "dependencies": {
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "helmet": "^4.1.0",
+    "i18n": "^0.13.2",
+    "jsdom": "^16.4.0",
+    "nodemailer": "^6.4.11",
+    "serve-favicon": "^2.5.0"
+  }
+}

@@ -1,0 +1,154 @@
+<%- include("./partials/header") %>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<!-- Apple のMobile Safari でウェブ開発者がビューポートのサイズと拡大率を制御できるよう、モバイルに最適化した「viewport meta タグ」 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<title>お問い合わせフォーム</title>
+		<!-- Google Font -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/form.css">
+		<!-- js -->
+		<!-- ブラウザ機能検出のModernizr -->
+        <script nonce="<%= nonce %>" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
+		<script nonce="<%= nonce %>" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<!-- 保留中 <script nonce="<%= nonce %>" type="text/javascript" src="./middleware/contact.js"></script>  -->
+		<script nonce="<%= nonce %>" type="text/javascript">
+			// Contact メールヘッダインジェクション対策
+			$(document).ready(function(){
+				//メールアドレス&確認用メールアドレス入力でキーを押したり離したり変更したりしたとき
+				$('#email').bind('keydown keyup keypress change',function(){
+					//入力内容を取得
+					var str = $(this).val();
+					//改行を削除
+					str = str.replace(/\r?\n/g,"");
+					//改行を削除した内容を入力エリアに戻す
+					$(this).val(str);
+				});
+			});
+
+			// 送信ボタンを押した時に入力項目のエラーチェック
+			$(function(){
+				$('button:submit[id="btn_submit"]').click(function(){
+					if(!input_check()){
+					console.log("エラー");
+						return false;
+					}
+				});
+			});
+
+			// 入力項目エラーメッセージの関数input_check
+			function input_check(){
+				var result = true;
+				// 入力エラー文をリセット
+				$("#email_error").empty();
+				$("#confirm_error").empty();
+				$("#remarks_error").empty();
+				// 入力内容セット
+				var mailaddress  = $("#email").val();
+				var confirmAddress = $("#confirmAddress").val();
+				var remarks  = $("#remarks").val();
+				
+				// メールアドレス
+				if(mailaddress == ""){
+					$("#email_error").html(" メールアドレスは必須です。");
+					result = false;
+				}else if(!mailaddress.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
+					$("#email_error").html(" 半角英数字ではない、または@マークが抜けています。");
+					result = false;
+				}else if(mailaddress.length > 255){
+					$("#email_error").html(" 正しいメールアドレスを入力してください。");
+					result = false;
+				}
+				
+				// 確認用メールアドレス
+				if(confirmAddress == ""){
+					$("#confirm_error").html(" メールアドレスは必須です。");
+					result = false;
+				}else if(!confirmAddress.match(mailaddress)){
+					$("#confirm_error").html(" 上と同じメールアドレスを入力してください。");
+					result = false;
+				}else if(!confirmAddress.match(/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/)){
+					$("#confirm_error").html(" 半角英数字ではない、または@マークが抜けています。");
+					result = false;
+				}else if(confirmAddress.length > 255){
+					$("#confirm_error").html(" 正しいメールアドレスを入力してください。");
+					result = false;
+				}
+				
+				// お問い合わせ内容
+				if(remarks == ""){
+					$("#remarks_error").html(" お問い合わせ内容は必須です。");
+					result = false;
+				}else if(remarks.match(/[<(.*)>.*<\/\1>]/)){
+					$('#remarks_error').html(" スパム防止のためHTML、URLの貼りつけは出来ません。予めご了承ください。");
+					result = false;
+				}else if(remarks.match(/^[ 　\r\n\t]*$/)){ // 空白やタブのみ入力のチェック
+					$('#remarks_error').html(" お問い合わせ内容は必須です。");
+					result = false;
+				}
+
+				return result;
+			}
+
+			// ローディング中にローディング画面を表示させる
+			window.onload = function() {
+			  const spinner = document.getElementById('loading');
+			  spinner.classList.add('loaded');
+			}
+		</script>
+	</head>
+<body>
+	<!-- ローディング画面 -->
+	<div id="loading">
+	  <div class="spinner"></div>
+	</div>
+	<!-- 基本的なCSRF対策としてformにcsrfTokenを埋め込み、csrfTokenがない状態ではデータをPOST出来ない状態にする -->
+		<div class="wrapper">
+			<div class="inner">
+				<h1>
+					お問い合わせフォーム
+				</h1>
+				<hr>
+				<p class="explanation">
+					ご入力頂いた個人情報はセキュリティで守られた状態で送信されます。<br>また頂いた情報はこちらのお問い合わせでのみ管理・使用されます。<br><span>*</span>部分は必須のため必ずご入力ください。
+				</p>
+				<form action="/contact" method="POST">
+					<div>
+						<p style="font-weight: bold; padding: 0 10px 0 0px; margin: 0px;">会社名</p>
+						<input type="text" name="companyname" placeholder="例) 株式会社xxx" size="50" maxlength="245">
+					</div>
+					<div>
+						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>お名前</p>
+						<input type="text" name="username" placeholder="例) 山田花子" size="50" maxlength="245" required>
+					</div>
+					<div>
+						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>メールアドレス</p>
+						<input type="text" id="email" name="email" placeholder="例) shiritai_oshiete@xxx.com" size="50" maxlength="100">
+						<span id="email_error"></span>
+					</div>
+					<div>
+						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>メールアドレス確認用</p>
+						<input type="text" id="confirmAddress" name="email" placeholder="確認のためメールアドレスをもう一度ご入力ください。" size="50" maxlength="100">
+						<span id="confirm_error"></span>
+					</div>
+					<div>
+						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>お問い合わせ内容をご記入</p>
+						<textarea name="message" id="remarks" cols="50" rows="10" placeholder="お問い合わせ内容" required></textarea><span id="remarks_error"></span>
+					</div>
+					<button type="submit" id="btn_submit" class="btn btn-success mt-5">
+						<i class="fas fa-angle-double-right"></i>
+						送信する
+					</button>
+					<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+				</form>
+			</div>
+		</div>
+<%- include("./partials/footer") %>
+

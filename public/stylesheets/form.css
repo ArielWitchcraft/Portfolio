@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+/* 全体をデフォルトで余白を0pxにしておく */
+*{
+    margin :0px;
+    padding: 0px;
+}
+
+/* ローディング画面 */
+#loading {
+	width: 100vw;
+	height: 100vh;
+	-webkit-transition: all 1.2s ease; /* 1.2秒でフェードアウト */
+		  transition: all 1.2s ease;
+	background-color: rgb(203, 180, 212);
+	/* ローディング画面をコンテンツに被せて表示 */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+.spinner {
+	width: 100px;
+	height: 100px;
+	margin: 350px auto;
+	background-color: #fff;
+	border-radius: 100%;
+	animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+/* JSを読み込んだらローディング画面の要素を透明にして非表示にする指定 */
+.loaded {
+	opacity: 0;
+	visibility: hidden;
+}
+
+body {
+	background-color: #292929;
+	font-family: "Nunito", "FontAwesome", "Noto Sans JP", sans-serif;
+	color: #292929;
+}
+
+body,
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.inner {
+	width: 900px;
+	max-width: 100%;
+	margin: 10% auto;
+	padding: 24px;
+	background: #fff;
+}
+
+.explanation {
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+
+h1 {
+	font-size: 1.75rem;
+}
+
+h2 {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+span {
+	color: red;
+	font-size: 1.25rem;
+}
+
+label {
+	margin-bottom: 10px;
+}
+
+textarea {
+	height: auto;
+	width: 100%;
+	font-family: "Nunito", "Noto Sans JP", sans-serif;
+	writing-mode: horizontal-tb;
+  	-webkit-writing-mode: horizontal-tb;
+  	-ms-writing-mode: horizontal-tb;
+}
+
+footer{
+	margin-top:auto;
+	background-color: #1a1a1a;
+}
+
+.sns {
+	color: #fff;
+}
+
+.icon {
+	font-style: normal;
+}
+
+.twittericon:hover {
+    color: #00b4db;
+}
+
+.instaicon:hover {
+	color: #c71585;
+}
+
+.githubicon:hover {
+    color: #2ea44f;
+}
+
+.footer-message {
+	color: #c71585;
+}
+
+/* メッセージ送信エラーの時 */
+.contact-error {
+	color: #fff;
+}
+/* メッセージ送信完了の時 */
+.completed {
+	color: #fff;
+	font-family: "Nunito", "Noto Sans JP", sans-serif;
+	font-weight: 100; 
+	text-align: center;
+}
+
+.inner-2 {
+	width: 900px;
+	max-width: 100%;
+	margin: 10% auto;
+	margin-bottom: 5%;
+	padding: 24px;
+	background: #292929;
+}
+
+.fa-handshake {
+	justify-content: center;
+	color: #c4a747
+}
+
+.goback {
+	text-align: center;
+	margin-top: 150px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	font-family: "Nunito", "Noto Sans JP", sans-serif;
+	font-weight: 200;
+	font-size: 1.5rem;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #c71585;
+}

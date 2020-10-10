@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+/* 全体をデフォルトで余白を0pxにしておく */
+*{
+    margin :0px;
+    padding: 0px;
+}
+
+body {
+	background-color: #292929;
+}
+
+body,
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.inner {
+	width: 900px;
+	max-width: 100%;
+	margin: 10% auto;
+	padding: 24px;
+}
+
+h1 {
+	font-family:  "Nunito", "Noto Sans JP", sans-serif;
+	font-weight: 100;
+	margin-top: 100px;
+	text-align: center;
+	color: #fff;
+}
+
+h2 {
+	font-family:  "Nunito", "Noto Sans JP", sans-serif;
+	font-weight: 100;
+	margin-top: 100px;
+	color: #fff;
+	text-align: center;
+}
+
+footer{
+	margin-top: 240px;
+	background-color: #1a1a1a;
+}
+
+.sns {
+	color: #fff;
+}
+
+.icon {
+	font-style: normal;
+}
+
+.twittericon:hover {
+    color: #00b4db;
+}
+
+.instaicon:hover {
+	color: #c71585;
+}
+
+.githubicon:hover {
+    color: #2ea44f;
+}
+
+.footer-message {
+	color: #c71585;
+}

@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+#mainNavbar {
+    font-weight: 200;
+	font-family: "Nunito", "Noto Sans Japanese", sans-serif;
+}
+
+#mainNavbar .nav-link {
+    color: #c4a747;
+	font-size: 1.25rem;
+    font-weight: 200;
+	font-family: "Nunito", "Noto Sans Japanese", sans-serif;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #c71585;
+	text-decoration: none;
+}
+
+#mainNavbar .navbar-brand {
+    color: #c4a747;
+	font-family: 'Tangerine', cursive;
+	font-size: 2.25rem;
+}
+
+.fullscreen .modal-dialog {
+	margin: 0 0 0 0;
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	padding: 0;;
+}
+
+.fullscreen .modal-content {
+	height: 100%;
+	min-height: 100%;
+	border-radius: 0;
+	background: rgba(36, 36, 36, 0.90);
+	overflow:auto;
+}
+
+.fullscreen .modal-content .modal-header{
+	border: 0px;
+}
+ 
+.fullscreen .modal-content button{
+    opacity: 1;
+	padding-top: 5px;
+    padding-right: 20px;
+}
+
+.fullscreen button span{
+	color: white;
+	font-size: 3rem;
+	font-weight: 100;
+}
+
+.fullscreen .modal-title {
+	color: #c4a747;
+	font-family: 'Tangerine', cursive;
+	font-size: 2.25rem;
+}
+
+.fullscreen .modal-body li {
+	padding-bottom: 43px;
+}
+
+.fullscreen .modal-body a {
+	color: white;
+	font-size: 1.5rem;
+    font-weight: 200;
+	font-family: "Nunito", "Noto Sans Japanese", sans-serif;
+}
+
+.fullscreen .modal-body a:hover {
+    color: #c71585;
+	text-decoration: none;
+}
+
+.navbar.scrolled {
+    background: #1a1a1a;
+    transition: background 500ms;
+}

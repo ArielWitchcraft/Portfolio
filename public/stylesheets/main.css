@@ -1,0 +1,429 @@
+@charset "utf-8";
+
+/* 全体をデフォルトで余白を0pxにしておく */
+*{
+    margin :0px;
+    padding: 0px;
+}
+
+/* ローディング画面 */
+#loading {
+	width: 100vw;
+	height: 100vh;
+	-webkit-transition: all 1.2s ease; /* 1.2秒でフェードアウト */
+		  transition: all 1.2s ease;
+	background-color: rgb(203, 180, 212);
+	/* ローディング画面をコンテンツに被せて表示 */
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+.spinner {
+	width: 100px;
+	height: 100px;
+	margin: 350px auto;
+	background-color: #fff;
+	border-radius: 100%;
+	animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+/* JSを読み込んだらローディング画面の要素を透明にして非表示にする指定 */
+.loaded {
+	opacity: 0;
+	visibility: hidden;
+}
+
+body {
+    background-color: #292929;
+    font-family: "Nunito", "FontAwesome", "Noto Sans Japanese", sans-serif;
+}
+
+body,
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.content {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.content2 {
+    margin-top: 50px;
+	background-color: #1a1a1a;
+	padding: 50px;
+}
+
+.content3 {
+	padding: 50px;
+	background: url(../images/AnyConv.com__background-min.jpeg);
+	background-size: cover;
+	position: relative; 
+}
+
+.content3::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(207, 203, 193, 0.8);
+}
+
+/* Each Element's Designing */
+h1 {
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.5rem;
+    line-height: 2;
+	position: relative;
+	text-align: center;
+ 	padding-top: 35vh;
+    font-family: "Noto Serif JP", serif;
+}
+
+.blog {
+	color: #fff;
+    font-weight: 100;
+    font-size: 3.75rem;
+    text-align: center;
+    font-family: "Tangerine", cursive;
+	padding-top: 250px;
+	padding-bottom: 300px;
+}
+
+.myjob h2 {
+    color: #fff;
+    font-weight: 100;
+    font-size: 2.25rem;
+	margin-bottom: 20px;
+}
+
+.web-img, .trans-img {
+	position: relative;
+	background-size: cover;
+}
+
+.web-img::before, .trans-img::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(11, 12, 16, 0.5);
+}
+
+.content2 h2, .content3 h2  {
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.75rem;
+}
+
+.profile-img img{
+	height: 400px;
+	position: relative;
+	background-size: cover;
+}
+
+.profile-img::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin-right: 60px;
+	margin-left: 60px;
+	background-color: rgba(207, 203, 193, 0.6);
+}
+
+.content3 h2 {
+	color: #806329;
+	font-family: "Nunito", "Noto Serif JP", serif;
+    font-weight: 200;
+    font-size: 2.5rem;
+	position: relative;
+  	z-index: 1;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 2rem;
+}
+
+.body-1 {
+	height: 25rem;
+}
+
+.body-2 {
+	height: 23rem;	
+} 
+
+.body-3 {
+	height: 23rem;
+}
+
+h3 {
+	padding-top: 10px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 200;
+    font-size: 1.75rem;
+}
+
+h3::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 1.5px;
+    background: #c71585;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+
+h3:hover::after {
+    transform: scale(1, 1);
+}
+
+h4 {
+    color: #fff;
+    font-weight: 200;
+    font-size: 1.75rem;
+    line-height: 2;
+}
+
+.scale-box {
+	width: 250px;
+	height: 200px;
+	overflow: hidden; /* 拡大時にはみ出る部分は隠す */
+}
+
+.scale-image {
+	width: 250px;
+	height: 200px;
+	transition-duration: 1.8s;
+}
+
+.scale-image:hover {
+	transform: scale(1.5,1.5); /* 画像の拡大 */
+	cursor: pointer; /* カーソルをポインターにする */
+}
+
+.lead {
+    color: #fff;
+    font-weight: 200;
+    font-size: 1.125rem;
+}
+
+.lead2 {
+    color: #1a1a1a;
+    font-weight: 300;
+    font-size: 1.125rem;
+	position: relative;
+	z-index: 1;
+}
+
+hr.pause_1 {
+	height: 1px;
+	margin: auto;
+	margin-bottom: 20px;
+	text-align: center;
+	background-color: #c4a747;
+	width: 60px;
+	border: 0;
+}
+
+hr.pause_2 {
+	height: 1px;
+	margin: auto;
+	margin-bottom: 50px;
+	text-align: center;
+	background-color: #806329;
+	width: 60px;
+	border: 0;
+	position: relative;
+	z-index: 1;
+}
+
+hr.pause_3 {
+	height: 1px;
+	margin: auto;
+	text-align: center;
+	background-color: #fff;
+	width: 100%;
+	border: 0;
+}
+
+.about {
+    color: #fff;
+    font-weight: 200;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.round {
+	color: #fff;
+	font-weight: 200;
+	font-size: 1.75rem;
+	background-color: #c71585;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	margin-top: 0px;
+}
+
+.skill { 
+	background-color: #1a1a1a;
+	padding: 0.5em 1em;
+    margin: 2em 0;
+    border-right: double 7px #c4a747; 
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.btn-light {
+    color: #806329;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-light:hover {
+    color: #fff;
+    background-color: #c71585;
+    border-color: #dae0e5;
+}
+
+footer{
+	margin-top:auto;
+	background-color: #1a1a1a;
+}
+
+.sns {
+	color: #fff;
+}
+
+.icon {
+	font-style: normal;
+	color: #c4a747;
+}
+
+.twittericon:hover {
+    color: #00b4db;
+}
+
+.instaicon:hover {
+	color: #c71585;
+}
+
+.githubicon:hover {
+    color: #2ea44f;
+}
+
+.footer-message {
+	color: #c71585;
+}
+
+/* top slideshow background */
+.top {
+	font-family: 'Tangerine', cursive;
+	z-index: 1;
+	position: relative;
+	text-align: center;
+	padding-top: 40vh;
+}
+/* #edd172 */
+/* #aa076b */
+
+.top h2 {
+    color: #fff;
+    font-size: 4.5rem;
+    text-shadow: 1px 2px 3px #1a1a1a;
+}
+
+.slideshow { 
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slideshow li { 
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	opacity: 0;
+	z-index: 0;
+	animation: imageAnimation 25s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+	background-image: linear-gradient(-45deg, rgba(11, 12, 16, .7), rgba(67, 67, 67, .9)),url(../images/AnyConv.com__1st-min.jpeg); 
+}
+.slideshow li:nth-child(2) { 
+	background-image: linear-gradient(-45deg, rgba(11, 12, 16, .9), rgba(67, 67, 67, .7)),url(../images/AnyConv.com__2nd-min.jpeg);
+	animation-delay: 5s; 
+}
+.slideshow li:nth-child(3) { 
+	background-image: linear-gradient(-45deg, rgba(11, 12, 16, .7), rgba(67, 67, 67, .9)),url(../images/AnyConv.com__3rd-min.jpeg);
+	animation-delay: 10s; 
+}
+.slideshow li:nth-child(4) { 
+	background-image: linear-gradient(-45deg, rgba(11, 12, 16, .7), rgba(67, 67, 67, .9)),url(../images/AnyConv.com__4th-min.jpeg);
+	animation-delay: 15s; 
+}
+.slideshow li:nth-child(5) { 
+	background-image: linear-gradient(-45deg, rgba(11, 12, 16, .9), rgba(67, 67, 67, .7)),url(../images/AnyConv.com__5th-min.jpeg);
+	animation-delay: 20s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

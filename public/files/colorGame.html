@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/colorGame.css" type="text/css">
+    <title>colorGame</title>
+</head>
+<body>
+    <h1>
+        当ててみよう
+        <br>
+        <span id="colorDisplay">RGB</span>
+        <br>
+        カラーゲーム
+    </h1>
+    <div id="stripe">
+        <button id="reset">色を変える</button>
+        <span id="message"></span>
+        <button class="mode">Easy Mode</button>
+        <button class="mode selected">Hard Mode</button>
+    </div>
+
+    <div id="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+    <script nonce="<%= nonce %>" type="text/javascript" src="/files/colorGame.js"></script>
+</body>
+</html>

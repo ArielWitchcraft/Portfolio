@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<!-- Required meta tags -->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<!-- Google自動翻訳の停止 -->
+		<meta name="google" content="notranslate">
+		<!-- Apple のMobile Safari でウェブ開発者がビューポートのサイズと拡大率を制御できるよう、モバイルに最適化した「viewport meta タグ」 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<title>「Webサイトを作って欲しい・LPを作成して欲しい・Webサイトを英語版に翻訳して欲しい・英文メールのやり取りを代行して欲しい」あなたのお悩みを解決サポートします</title>
+		<!-- Google Font -->
+    	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/header.css">
+		<!-- ブラウザ機能検出のModernizr -->
+        <script nonce="<%= nonce %>" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark py-0 fixed-top" id="mainNavbar">
+			<a class="navbar-brand" href="#">Ariel</a>
+				<button class="navbar-toggler" type="button" data-toggle="modal" data-target="#menuModal" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+			<div class="collapse navbar-collapse">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="/">HOME<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/contact"><%= __("お問い合わせ") %></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/blog">BLOG</a>
+				</li>
+			  </ul>
+				<div class="d-flex justify-content-md-end">
+					  <a class="nav-link" style="padding-left: 0" href="/?lang=en"><%= __("English") %></a>
+					  <a class="nav-link" href="/?lang=ja"><%= __("日本語") %></a>
+				</div>
+			 </div>
+    	</nav>
+	
+	<!-- レスポンシブ時のメニュー用にモーダルウィンドウを設置 -->
+	<div class="modal fade fullscreen" id="menuModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+		   <h5 class="modal-title">Ariel</h5>
+		   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			 <span aria-hidden="true">×</span>
+		   </button>
+		  </div>
+		  <div class="modal-body">
+			<ul style="list-style-type:none;">
+			  <li><a class="d-flex justify-content-center" href="/">HOME</a></li>
+			  <li><a class="d-flex justify-content-center" href="/contact"><%= __("お問い合わせ") %></a></li>
+			  <li><a class="d-flex justify-content-center" href="/blog">BLOG</a></li>
+			  <li><a class="d-flex justify-content-center" style="padding-left: 0" href="/?lang=en"><%= __("English Page") %></a></li>
+			  <li><a class="d-flex justify-content-center" href="/?lang=ja"><%= __("日本語ページ") %></a></li>
+			</ul>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.fullscreen -->
+	
+	 <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script nonce="<%= nonce %>" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script nonce="<%= nonce %>" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script nonce="<%= nonce %>" type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script nonce="<%= nonce %>" type="text/javascript">
+			$(function () {
+				$(document).scroll(function(){
+					var $nav = $("#mainNavbar");
+					$nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+				})
+			})
+		</script>
+
