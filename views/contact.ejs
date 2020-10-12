@@ -18,7 +18,6 @@
 		<!-- ブラウザ機能検出のModernizr -->
         <script nonce="<%= nonce %>" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" async></script>
 		<script nonce="<%= nonce %>" type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<!-- 保留中 <script nonce="<%= nonce %>" type="text/javascript" src="./middleware/contact.js"></script>  -->
 		<script nonce="<%= nonce %>" type="text/javascript">
 			// Contact メールヘッダインジェクション対策
 			$(document).ready(function(){
@@ -47,13 +46,36 @@
 			function input_check(){
 				var result = true;
 				// 入力エラー文をリセット
+				$("#companyname_error").empty();
+				$("#username_error").empty();
 				$("#email_error").empty();
 				$("#confirm_error").empty();
 				$("#remarks_error").empty();
 				// 入力内容セット
+				var companyname = $("#companyname").val();
+				var username = $("#username").val();
 				var mailaddress  = $("#email").val();
 				var confirmAddress = $("#confirmAddress").val();
 				var remarks  = $("#remarks").val();
+				
+				// 会社名
+				if(companyname.length > 25){
+					$("#companyname_error").html(" 会社名は25文字以内で入力してください。");
+					result = false;
+				}else if(companyname.match(/[<(.*)>.*<\/\1>]/)){
+					$('#companyname_error').html(" スパム防止のためHTML、URLの貼りつけは出来ません。予めご了承ください。");
+				}
+				
+				// お名前
+				if(username == ""){
+					$("#username_error").html(" お名前は必須です。");
+					result = false;
+				}else if(name.length > 25){
+					$("#username_error").html(" お名前は25文字以内で入力してください。");
+					result = false;
+				}else if(username.match(/[<(.*)>.*<\/\1>]/)){
+					$('#username_error').html(" スパム防止のためHTML、URLの貼りつけは出来ません。予めご了承ください。");
+				}
 				
 				// メールアドレス
 				if(mailaddress == ""){
@@ -65,6 +87,8 @@
 				}else if(mailaddress.length > 255){
 					$("#email_error").html(" 正しいメールアドレスを入力してください。");
 					result = false;
+				}else if(email.match(/[<(.*)>.*<\/\1>]/)){
+					$('#email_error').html(" スパム防止のためHTML、URLの貼りつけは出来ません。予めご了承ください。");
 				}
 				
 				// 確認用メールアドレス
@@ -80,6 +104,8 @@
 				}else if(confirmAddress.length > 255){
 					$("#confirm_error").html(" 正しいメールアドレスを入力してください。");
 					result = false;
+				}else if(confirmAddress.match(/[<(.*)>.*<\/\1>]/)){
+					$('#confirm_error').html(" スパム防止のためHTML、URLの貼りつけは出来ません。予めご了承ください。");
 				}
 				
 				// お問い合わせ内容
@@ -122,25 +148,27 @@
 				<form action="/contact" method="POST">
 					<div>
 						<p style="font-weight: bold; padding: 0 10px 0 0px; margin: 0px;">会社名</p>
-						<input type="text" name="companyname" placeholder="例) 株式会社xxx" size="50" maxlength="245">
+						<input type="text" id="companyname" name="companyname" placeholder="例) 株式会社xxx" size="35" maxlength="25">
+						<span id="companyname_error"></span>
 					</div>
 					<div>
 						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>お名前</p>
-						<input type="text" name="username" placeholder="例) 山田花子" size="50" maxlength="245" required>
+						<input type="text" id="username" name="username" placeholder="例) 山田花子" size="35" maxlength="25" required>
+						<span id="username_error"></span>
 					</div>
 					<div>
 						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>メールアドレス</p>
-						<input type="text" id="email" name="email" placeholder="例) shiritai_oshiete@xxx.com" size="50" maxlength="100">
+						<input type="text" id="email" name="email" placeholder="例) shiritai_oshiete@xxx.com" size="35" maxlength="255">
 						<span id="email_error"></span>
 					</div>
 					<div>
 						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>メールアドレス確認用</p>
-						<input type="text" id="confirmAddress" name="email" placeholder="確認のためメールアドレスをもう一度ご入力ください。" size="50" maxlength="100">
+						<input type="text" id="confirmAddress" name="email" placeholder="確認のためメールアドレスをもう一度ご入力ください。" size="35" maxlength="255">
 						<span id="confirm_error"></span>
 					</div>
 					<div>
 						<p style="font-weight: bold; padding: 0 10px 0 0px; margin-top: 20px; margin-bottom: 0px;"><span>*</span>お問い合わせ内容をご記入</p>
-						<textarea name="message" id="remarks" cols="50" rows="10" placeholder="お問い合わせ内容" required></textarea><span id="remarks_error"></span>
+						<textarea name="message" id="remarks" cols="50" rows="10" placeholder="お問い合わせ内容" maxlength="500" required></textarea><span id="remarks_error"></span>
 					</div>
 					<button type="submit" id="btn_submit" class="btn btn-success mt-5">
 						<i class="fas fa-angle-double-right"></i>
