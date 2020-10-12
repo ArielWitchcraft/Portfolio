@@ -59,8 +59,10 @@ body,
 	width: 900px;
 	max-width: 100%;
 	margin: 10% auto;
+	margin-top: 20%;
 	padding: 24px;
 	background: #fff;
+	box-sizing: border-box;
 }
 
 .explanation {
