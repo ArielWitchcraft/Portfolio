@@ -62,7 +62,6 @@ body,
 	margin-top: 20%;
 	padding: 24px;
 	background: #fff;
-	box-sizing: border-box;
 }
 
 .explanation {
@@ -88,6 +87,10 @@ span {
 
 label {
 	margin-bottom: 10px;
+}
+
+.input {
+	width: 230px;
 }
 
 textarea {
@@ -170,4 +173,43 @@ a {
 a:hover {
 	text-decoration: none;
 	color: #c71585;
+}
+
+/* メディアクエリ */
+@media (min-width: 480px){
+		.inner {
+		width: 900px;
+		max-width: 100%;
+		margin: 10% auto;
+		margin-top: 20%;
+		padding: 24px;
+		background: #fff;
+	}
+}
+
+@media (min-width: 481px) and (max-width:1024px){
+		.inner {
+		width: 900px;
+		max-width: 100%;
+		margin: 10% auto;
+		margin-top: 20%;
+		padding: 24px;
+		background: #fff;
+	}
+		.input {
+		width: 326px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+    .inner {
+		width: 900px;
+		max-width: 100%;
+		margin: 10% auto;
+		padding: 24px;
+		background: #fff;
+	}
+	.input {
+		width: 400px;
+	}
 }
