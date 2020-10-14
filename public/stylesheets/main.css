@@ -163,6 +163,11 @@ h1 {
     margin-bottom: .75rem;
 }
 
+.card-img-smalltop {
+		width: 90%;
+		height:	50%;
+	}
+
 .card-body {
     flex: 1 1 auto;
     padding: 2rem;
@@ -427,3 +432,25 @@ footer{
 .no-cssanimations .slideshow li {
 	opacity: 1;
 }
+
+/* メディアクエリ */
+@media (min-width: 480px){
+	.card-img-smalltop{
+		width: 90%;
+		height:	50%;
+	}
+}
+
+@media (min-width: 481px) and (max-width:1024px){
+	.card-img-top{
+		width: 90%;
+		height:	80%;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+    .card-img-top{
+		width: 90%;
+		height:	100%;
+	}
+} 
