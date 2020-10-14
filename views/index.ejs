@@ -59,7 +59,7 @@
 			</div>
 			<div class="row align-items-center content">
 				<div class="col-md-6 order-2 order-md-1 web-img">
-					<img src="../images/AnyConv.com__Webengineer-min.jpeg" alt="" class="img-fluid">
+					<img src="../images/AnyConv.com__Webengineer-min.jpeg" alt="エンジニアのキーボード" class="img-fluid">
 				</div>
 				<div class="col-md-6 text-center order-1 order-md-2">
 					<div class="row justify-content-center">
@@ -90,7 +90,7 @@
 					</div>
 				</div>
 				<div class="col-md-6 trans-img">
-					<img src="../images/AnyConv.com__Translator-min.jpeg" alt="" class="img-fluid">
+					<img src="../images/AnyConv.com__Translator-min.jpeg" alt="英語のメッセージ" class="img-fluid">
 				</div>
 			</div>
 		</section>
@@ -127,7 +127,7 @@
 					</div>
 					<div class="d-flex justify-content-center">
 						<div class="scale-box">
-							<a href="../files/colorGame.html" target="_blank" rel="noopener noreferrer"><img src="../images/RGB Color Game-min.jpg" alt="" class="scale-image img-fluid"></a>
+							<a href="../files/colorGame.html" target="_blank" rel="noopener noreferrer"><img src="../images/RGB Color Game-min.jpg" alt="ランダムな色当てゲーム" class="scale-image"></a>
 						</div>
 					</div>
 					<div class="d-flex justify-content-center">
@@ -188,10 +188,33 @@
 						<div class="accordion" id="accordionExample">
 							<div class="row justify-content-center">
 								<!-- 1st content displays closed accordion for small breakpoint. -->
-								<div class="col-12 d-lg-none mb-4">
+								<div class="col-sm-12 d-md-none mb-4">
 									<div class="card">
 										<div class="card-header" id="headingOne">
-											<img class="card-img-top" src="../images/AnyConv.com__web1-min.jpeg" alt style="height: 300px;">		
+											<img class="card-img-smalltop" src="../images/AnyConv.com__web1-min.jpeg" alt="スマートフォンのレスポンシブ対応も可能">		
+												<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+													<%= __("コーディング/レスポンシブ") %>
+												</h3>
+										</div>
+										<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+										  <div class="card-body text-justify">
+											<%= __("「1ページで完了するサイトを制作したい」「新たな下層ページを追加で作りたい」「スマホ画面にもサイズ対応できるようにレスポンシブ対応させたい」という方へ。") %>
+											<ul style="margin-top: 40px">
+												<li><%= __("HTML＆CSSコーディング") %></li>
+												<li><%= __("下層ページコーディング") %></li>
+												<li><%= __("レスポンシブ対応") %></li>
+												<li><%= __("LP制作") %></li>
+												<li><%= __("ホームページ修正") %></li>
+											</ul>
+										  </div>
+										</div>
+									</div>
+								</div>
+								<!-- 1st content displays opened accordion from md breakpoint -->
+								<div class="col-md-6 d-none d-md-block d-lg-none mb-4">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-smalltop" src="../images/AnyConv.com__web1-min.jpeg" alt="レスポンシブなサイトを見られるスマホ">		
 												<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 													<%= __("コーディング/レスポンシブ") %>
 												</h3>
@@ -211,10 +234,31 @@
 									</div>
 								</div>
 								<!-- 1st content displays opened accordion from large breakpoint. -->
-								<div class="col-md-4 mb-4 d-none d-lg-block d-xl-block">
+								<div class="col-lg-6 d-none d-lg-block d-xl-none mb-4">
 									<div class="card">
 										<div class="card-header" id="headingOne">
-											<img class="card-img-top" src="../images/AnyConv.com__web1-min.jpeg" alt style="height: 300px;">		
+											<img class="card-img-top" src="../images/AnyConv.com__web1-min.jpeg" alt="レスポンシブなサイトを見られるスマホ">		
+											<h3>
+												<%= __("コーディング/レスポンシブ") %>
+											</h3>
+										</div>
+										<div class="card-body body-1 text-justify">
+											<%= __("「1ページで完了するサイトを制作したい」「新たな下層ページを追加で作りたい」「スマホ画面にもサイズ対応できるようにレスポンシブ対応させたい」という方へ。") %>
+											<ul style="margin-top: 40px">
+												<li><%= __("HTML＆CSSコーディング") %></li>
+												<li><%= __("下層ページコーディング") %></li>
+												<li><%= __("レスポンシブ対応") %></li>
+												<li><%= __("LP制作") %></li>
+												<li><%= __("ホームページ修正") %></li>
+											</ul>
+										  </div>
+									</div>
+								</div>
+								<!-- 1st content displays opened accordion from xl breakpoint. -->
+								<div class="col-xl-4 d-none d-xl-block mb-4">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-top" src="../images/AnyConv.com__web1-min.jpeg" alt="レスポンシブなサイトを見られるスマホ">		
 											<h3>
 												<%= __("コーディング/レスポンシブ") %>
 											</h3>
@@ -233,10 +277,31 @@
 								</div>
 
 								<!-- 2nd content displays closed accordion for small breakpoint. -->
-								<div class="col-12 d-lg-none mb-4">
+								<div class="col-sm-12 d-md-none mb-4">
 									<div class="card">
 										<div class="card-header" id="headingTwo">
-											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt style="height: 300px;">
+											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt="アニメーション機能を実装するパソコン">
+												<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+													<%= __("アニメーション機能/サーバー側と連携するプログラム") %>
+												</h3>
+										</div>
+										<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+											<div class="card-body text-justify">
+												<%= __("「JavaScriptやjQueryを導入してアニメーションを付けた動きのあるサイトを持ちたい」「お問い合わせフォームを付けて自社のメールへ受信できるようにしたい」という方へ。") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("動きのあるページ作り") %></li>
+												<li><%= __("お問い合わせフォームをプログラム") %></li>
+												<li><%= __("ログイン/ログアウト機能をプログラム") %></li>
+											 </ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 2nd content displays opened accordion from md breakpoint -->
+								<div class="col-md-6 d-none d-md-block d-lg-none mb-4">
+									<div class="card">
+										<div class="card-header" id="headingTwo">
+											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt="アニメーション機能を実装するパソコン">
 												<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
 													<%= __("アニメーション機能/サーバー側と連携するプログラム") %>
 												</h3>
@@ -254,10 +319,29 @@
 									</div>
 								</div>
 								<!-- 2nd content displays opened accordion from large breakpoint. -->
-								<div class="col-md-4 mb-4 d-none d-lg-block d-xl-block">
+								<div class="col-lg-6 d-none d-lg-block d-xl-none mb-4">
 									<div class="card">
 										<div class="card-header" id="headingOne">
-											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt style="height: 300px;">		
+											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt="アニメーション機能を実装するパソコン">		
+											<h3>
+												<%= __("アニメーション機能/サーバー側と連携するプログラム") %>
+											</h3>
+										</div>
+										<div class="card-body body-2 text-justify">
+											<%= __("「JavaScriptやjQueryを導入してアニメーションを付けた動きのあるサイトを持ちたい」「お問い合わせフォームを付けて自社のメールへ受信できるようにしたい」という方へ。") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("動きのあるページ作り") %></li>
+												<li><%= __("お問い合わせフォームをプログラム") %></li>
+												<li><%= __("ログイン/ログアウト機能をプログラム") %></li>
+											 </ul>
+										  </div>
+									</div>
+								</div>
+								<!-- 2nd content displays opened accordion from xl breakpoint. -->
+								<div class="col-xl-4 d-none d-xl-block mb-4">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-top" src="../images/AnyConv.com__web2-min.jpeg" alt="アニメーション機能を実装するパソコン">		
 											<h3>
 												<%= __("アニメーション機能/サーバー側と連携するプログラム") %>
 											</h3>
@@ -274,10 +358,29 @@
 								</div>
 
 								<!-- 3rd content displays closed accordion for small breakpoint. -->
-								<div class="col-12 d-lg-none mb-4">
+								<div class="col-sm-12 d-md-none mb-4">
 									<div class="card">
 										<div class="card-header" id="headingTwo">
-											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt style="height: 300px;">
+											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt="アプリケーション開発パソコン">
+											<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<%= __("その他Webアプリケーション開発など") %>
+											</h3>
+										</div>
+										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+											<div class="card-body text-justify">
+												<%= __("JavaScript・JavaScriptのライブラリやフレームワークを使用したアプリケーションの開発でプログラマーをお探しの方へ") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("仕様書に沿ってプログラミングを行うお仕事をお受け致します") %></li>
+											 </ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 3rd content displays opened accordion from md breakpoint. -->
+								<div class="col-md-6 d-none d-md-block d-lg-none mb-4">
+									<div class="card">
+										<div class="card-header" id="headingTwo">
+											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt="アプリケーション開発パソコン">
 											<h3 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 												<%= __("その他Webアプリケーション開発など") %>
 											</h3>
@@ -293,10 +396,10 @@
 									</div>
 								</div>
 								<!-- 3rd content displays opened accordion from large breakpoint. -->
-								<div class="col-md-4 mb-4 d-none d-lg-block d-xl-block">
+								<div class="col-lg-6 d-none d-lg-block d-xl-none mb-4">
 									<div class="card">
 										<div class="card-header" id="headingOne">
-											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt style="height: 300px;">		
+											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt="アプリケーション開発パソコン">		
 											<h3>
 												<%= __("その他Webアプリケーション開発など") %>
 											</h3>
@@ -309,9 +412,26 @@
 										 </div>
 									</div>
 								</div>
-
+								<!-- 3rd content displays opened accordion from xl breakpoint. -->
+								<div class="col-xl-4 d-none d-xl-block mb-4">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<img class="card-img-top" src="../images/AnyConv.com__web3-min.jpeg" alt="アプリケーション開発パソコン">		
+											<h3>
+												<%= __("その他Webアプリケーション開発など") %>
+											</h3>
+										</div>
+										<div class="card-body body-3 text-justify">
+											<%= __("JavaScript・JavaScriptのライブラリやフレームワークを使用したアプリケーションの開発でプログラマーをお探しの方へ") %>
+											 <ul style="margin-top: 40px">
+												<li><%= __("仕様書に沿ってプログラミングを行うお仕事をお受け致します") %></li>
+											 </ul>
+										 </div>
+									</div>
+								</div>
 							</div>
 						</div>
+					
 						<p class="lead2 py-5">
 							<%= __("ご要望に合わせて無限なカスタマイズが可能です。お気軽にご相談ください。") %>
 						</p>
