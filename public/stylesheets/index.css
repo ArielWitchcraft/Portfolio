@@ -55,7 +55,7 @@ body,
 }
 
 .content {
-    margin-top: 200px;
+    margin-top: 100px;
     margin-bottom: 100px;
 }
 
@@ -90,7 +90,7 @@ h1 {
     line-height: 2;
 	position: relative;
 	text-align: center;
- 	padding-top: 35vh;
+ 	padding-top: 45vh;
     font-family: "Noto Serif JP", serif;
 }
 
@@ -456,9 +456,19 @@ footer{
 		z-index: 0;
 		animation: imageAnimation 25s linear infinite; 
 	}
+	h1 {
+		color: #fff;
+		font-weight: 100;
+		font-size: 1.5rem;
+		line-height: 2;
+		position: relative;
+		text-align: center;
+		padding-top: 45vh;
+		font-family: "Noto Serif JP", serif;
+	}
 }
 
-@media (min-width: 481px) and (max-width:1024px){
+@media (min-width: 481px) and (max-width:1023px){
 	.card-img-top{
 		width: 90%;
 		height:	80%;
@@ -468,11 +478,11 @@ footer{
 		z-index: 1;
 		position: relative;
 		text-align: center;
-		padding-top: 35vh;
+		padding-top: 40vh;
 	}
 	.slideshow li { 
 		width: 100%;
-		height: 80%;
+		height: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -482,9 +492,55 @@ footer{
 		z-index: 0;
 		animation: imageAnimation 25s linear infinite; 
 	}
+	h1 {
+		color: #fff;
+		font-weight: 100;
+		font-size: 1.5rem;
+		line-height: 2;
+		position: relative;
+		text-align: center;
+		padding-top: 50vh;
+		font-family: "Noto Serif JP", serif;
+	}
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px){
+	.card-img-top{
+		width: 90%;
+		height:	100%;
+	}
+	.top {
+		font-family: 'Tangerine', cursive;
+		z-index: 1;
+		position: relative;
+		text-align: center;
+		padding-top: 30vh;
+	}
+	.slideshow li { 
+		width: 100%;
+		height: 70%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		opacity: 0;
+		z-index: 0;
+		animation: imageAnimation 25s linear infinite; 
+	}
+	h1 {
+		color: #fff;
+		font-weight: 100;
+		font-size: 1.5rem;
+		line-height: 2;
+		position: relative;
+		text-align: center;
+		padding-top: 35vh;
+		font-family: "Noto Serif JP", serif;
+	}
+}
+
+@media (min-width: 1025px) {
     .card-img-top{
 		width: 90%;
 		height:	100%;
@@ -507,5 +563,15 @@ footer{
 		opacity: 0;
 		z-index: 0;
 		animation: imageAnimation 25s linear infinite; 
+	}
+	h1 {
+		color: #fff;
+		font-weight: 100;
+		font-size: 1.5rem;
+		line-height: 2;
+		position: relative;
+		text-align: center;
+		padding-top: 50vh;
+		font-family: "Noto Serif JP", serif;
 	}
 } 
