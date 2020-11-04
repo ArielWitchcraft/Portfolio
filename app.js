@@ -152,10 +152,10 @@ app.post("/contact", csrfProtection, middleware.checkServerError, (req, res) => 
 				secure: true, // SSL
 				auth: { //絶対にGitHubのような公開コードリポジトリに保管しない
 				  type: "OAuth2",
-				  user: "Ariel.WebandEnglish@gmail.com",
-				  clientId: "500561616448-bfocesn1hmdkrn0i54i6tqp43jgucoss.apps.googleusercontent.com",
-				  clientSecret: "iJc0vqSPWrmdtir5V2uZk_AU",
-				  refreshToken: "1//04tWVvNSWoFCyCgYIARAAGAQSNwF-L9IrVhjjpPEljMfBGknN34rtLy-wGu-D6tzMGMIXSrOK_hFb2dpYl-zvchZKGmt2Sg5ICTY"
+				  user: "xxxxx",
+				  clientId: "xxxxxx.apps.googleusercontent.com",
+				  clientSecret: "xxxxxx",
+				  refreshToken: "xxxxxxx"
 				}
 			})
 	// Specify what the email will look like
